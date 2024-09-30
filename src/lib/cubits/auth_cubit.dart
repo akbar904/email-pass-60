@@ -18,7 +18,7 @@ class AuthCubit extends Cubit<AuthState> {
 	void logIn(String email, String password) {
 		// Here you would normally make a call to an authentication service
 		// For simplicity, we're assuming the login is always successful
-		final user = User('zharfan@gmail.com', 'cat');
+		final user = User(email, password);
 		emit(Authenticated(user));
 	}
 
