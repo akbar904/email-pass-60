@@ -31,6 +31,8 @@ class _LoginFormState extends State<LoginForm> {
 							content: Text(state.message),
 						),
 					);
+				} else if (state is AuthStateSuccess) {
+					Navigator.pushReplacementNamed(context, '/home');
 				}
 			},
 			child: BlocBuilder<AuthCubit, AuthState>(

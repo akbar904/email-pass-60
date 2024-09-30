@@ -19,14 +19,26 @@ class MyApp extends StatelessWidget {
 				theme: ThemeData(
 					primarySwatch: Colors.blue,
 				),
-				home: BlocBuilder<AuthCubit, AuthState>(
-					builder: (context, state) {
+				home: BlocListener<AuthCubit, AuthState>(
+					listener: (context, state) {
 						if (state is Authenticated) {
-							return HomeScreen();
-						} else {
-							return LoginScreen(loginButtonText: 'Login Yuk');
+							Navigator.of(context).pushReplacement(
+								MaterialPageRoute(builder: (context) => HomeScreen()),
+							);
 						}
 					},
+					child: BlocBuilder<AuthCubit, AuthState>(
+						builder: (context, state) {
+							if (state is Unauthenticated) {
+								return LoginScreen(loginButtonText: 'Login Yuk');
+							} else if (state is Authenticated) {
+								return HomeScreen();
+							}
+							return Scaffold(
+								body: Center(child: CircularProgressIndicator()),
+							);
+						},
+					),
 				),
 			),
 		);
