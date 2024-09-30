@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
 	@override
 	Widget build(BuildContext context) {
 		return BlocProvider(
-			create: (context) => AuthCubit(),
+			create: (context) => AuthCubit(
+				defaultEmail: 'zharfan@gmail.com',
+				defaultPassword: 'cat',
+			),
 			child: MaterialApp(
 				title: 'Simple App',
 				theme: ThemeData(
@@ -24,7 +27,9 @@ class MyApp extends StatelessWidget {
 						if (state is Authenticated) {
 							return HomeScreen();
 						} else {
-							return LoginScreen();
+							return LoginScreen(
+								loginButtonText: 'Login Yuk',
+							);
 						}
 					},
 				),
