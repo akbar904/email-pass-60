@@ -11,8 +11,8 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-	final _emailController = TextEditingController(text: 'zharfan@gmail.com');
-	final _passwordController = TextEditingController(text: 'cat');
+	final _emailController = TextEditingController();
+	final _passwordController = TextEditingController();
 
 	@override
 	void dispose() {
@@ -69,7 +69,7 @@ class _LoginFormState extends State<LoginForm> {
 										final password = _passwordController.text;
 										context.read<AuthCubit>().logIn(email, password);
 									},
-									child: Text('Login Yuk'),
+									child: Text('Login'),
 								),
 							],
 						),

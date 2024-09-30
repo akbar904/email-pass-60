@@ -15,7 +15,7 @@ class Authenticated extends AuthState {
 class AuthCubit extends Cubit<AuthState> {
 	AuthCubit() : super(Unauthenticated());
 
-	void logIn([String email = 'zharfan@gmail.com', String password = 'cat']) {
+	void logIn(String email, String password) {
 		// Here you would normally make a call to an authentication service
 		// For simplicity, we're assuming the login is always successful
 		final user = User(email, password);
