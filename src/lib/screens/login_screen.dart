@@ -14,10 +14,8 @@ class LoginScreen extends StatelessWidget {
 				title: Text('Login'),
 			),
 			body: BlocProvider(
-				create: (context) => AuthCubit()..initialize('zharfan@gmail.com', 'cat'),
-				child: LoginForm(
-					loginButtonText: 'Login Yuk',
-				),
+				create: (context) => AuthCubit(),
+				child: LoginForm(),
 			),
 		);
 	}

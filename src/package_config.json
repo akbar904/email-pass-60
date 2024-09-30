@@ -404,13 +404,13 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "simple_app",
+      "name": "com.example.simple_app",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2024-09-30T13:38:05.563001Z",
+  "generated": "2024-09-30T13:27:07.534714Z",
   "generator": "pub",
   "generatorVersion": "3.5.2",
   "flutterRoot": "file:///C:/flutter",
