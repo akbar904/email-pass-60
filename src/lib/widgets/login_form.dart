@@ -69,7 +69,7 @@ class _LoginFormState extends State<LoginForm> {
 										final password = _passwordController.text;
 										context.read<AuthCubit>().logIn(email, password);
 									},
-									child: Text('Login Yuk'),
+									child: Text('Login'),
 								),
 							],
 						),
